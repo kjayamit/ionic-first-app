@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Todo } from './todo';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
