@@ -20,14 +20,13 @@
     <ion-icon name="add-circle" slot="start"></ion-icon>
   </ion-button>
 
-  <ion-list style="background: var(--ion-color-primary);">
+  <ion-list lines="full" style="background: var(--ion-color-primary);">
 
     <ion-item color="primary" *ngFor="let todo of todos">
       <ion-icon [name]="getIcon(todo)" slot="start">
-
       </ion-icon>
-       <h2>{{todo.title}}</h2>
-       <h2>{{todo.note}}</h2>
+      <span float-left> <h2>{{todo.title}}</h2></span>
+      <ion-label slot="end">{{todo.note}}</ion-label>
       <div slot="end">
 
       </div>
@@ -35,3 +34,4 @@
   </ion-list>
 
 </ion-content>
+
