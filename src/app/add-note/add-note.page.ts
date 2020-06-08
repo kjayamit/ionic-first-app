@@ -5,6 +5,7 @@ import { TodoService } from '../todo.service';
 import { Todo } from '../todo';
 
 import { ToastController } from '@ionic/angular';
+import { HomePage } from '../home/home.page';
 
 @Component({
   selector: 'app-add-note',
@@ -15,6 +16,7 @@ export class AddNotePage implements OnInit {
 
   noteForm: FormGroup;
   public todos: Array<Todo> = [];
+  homePage : HomePage;
 
   constructor(
     public todoService: TodoService,
@@ -44,9 +46,9 @@ export class AddNotePage implements OnInit {
         completed: true
       };
       await this.todoService.create(key,todo);
-     this.todos = await this.todoService.read();
+    //  this.todos = await this.todoService.read();
      this.router.navigate(['/home']);
-        
+        this.homePage.ngOnInit;
         // this.showToast
        
     }

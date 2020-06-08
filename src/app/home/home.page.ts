@@ -19,6 +19,10 @@ export class HomePage {
 
   }
 
+  async ionViewWillEnter() {
+    this.todos = await this.todoService.read();
+  }
+
   getIcon(todo){
     if(todo.completed) return 'checkmark-circle';
     else return 'stopwatch';
