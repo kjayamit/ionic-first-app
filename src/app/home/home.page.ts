@@ -32,6 +32,7 @@ export class HomePage {
     let todo = {
       title: `${key}`,
       note: "A new todo",
+      tags: ["Default"],
       completed: true
     };
     await this.todoService.create(key,todo);

@@ -27,6 +27,7 @@ export class AddNotePage implements OnInit {
       this.noteForm = new FormGroup({
         note_title: new FormControl(''),
         note_note: new FormControl(''),
+        note_tags: new FormControl(''),
       });
     }
 
@@ -43,6 +44,8 @@ export class AddNotePage implements OnInit {
       let todo = {
         title: this.noteForm.controls['note_title'].value,
         note: this.noteForm.controls['note_note'].value,
+        tags: this.noteForm.controls['note_tags'].value.split(" "),
+        // tags: ["Default"],
         completed: true
       };
       await this.todoService.create(key,todo);
@@ -60,6 +63,7 @@ export class AddNotePage implements OnInit {
     let todo = {
       title: `${key}`,
       note: "A new todo",
+      tags: ["Default"],
       completed: true
     };
     await this.todoService.create(key,todo);

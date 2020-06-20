@@ -4,3 +4,17 @@ ion-content {
   --padding-start: 20px;
   --padding-top: 20px;
 }
+
+.highlightText {
+  background: yellow;
+  height: 30px;
+  color: red;
+  padding: 4px;
+  font-size: 25px;
+  line-height: 15px;
+  border-radius: 10px;
+}
+.highlightText:empty
+{
+    display: none;
+}
