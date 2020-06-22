@@ -24,13 +24,29 @@
 
     <ion-item color="primary" *ngFor="let todo of todos">
       <ion-icon [name]="getIcon(todo)" slot="start"></ion-icon>
-      <span float-left> <h2>{{todo.title}}</h2></span>
-      
-      
+
+      <!-- <span float-left> <h2>{{todo.title}}</h2></span>   
       <ion-label slot="end">{{todo.note}}</ion-label>
-      <div slot="end">
+    <div slot="end">
         <span float-left class="highlightText"><ion-icon name="bookmarks-outline"></ion-icon>{{todo.tags}}</span>
-      </div>
+      </div> -->
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            {{todo.title}}
+          </ion-col>
+          <ion-col>
+            {{todo.note}}
+          </ion-col>
+          <ion-col>
+            <span class="highlightText"><ion-icon name="bookmarks-outline"></ion-icon>{{todo.tags}}</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+      
     </ion-item>
   </ion-list>
 
