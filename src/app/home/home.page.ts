@@ -14,9 +14,7 @@ export class HomePage {
   constructor(public todoService: TodoService) {}
 
   async ngOnInit(){
-
     this.todos = await this.todoService.read();
-
   }
 
   async ionViewWillEnter() {
