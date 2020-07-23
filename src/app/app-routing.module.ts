@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'add-note',
     loadChildren: () => import('./add-note/add-note.module').then( m => m.AddNotePageModule)
   },
+  {
+    path: 'tags',
+    loadChildren: () => import('./tags/tags.module').then( m => m.TagsPageModule)
+  },
 ];
 
 @NgModule({

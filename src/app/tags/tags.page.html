@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>tags</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list lines="full" style="background: var(--ion-color-primary);">
+
+    <ion-item color="primary" *ngFor="let tag of tags">
+      <ion-icon [name]="getIcon(todo)" slot="start"></ion-icon>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            {{tag.name}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+    </ion-item>
+  </ion-list>
+
+</ion-content>

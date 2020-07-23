@@ -69,7 +69,6 @@ export class AddNotePage implements OnInit {
       };
       await this.todoService.create(key,todo);
       this.router.navigate(['/home']);
-      // this.homePage.ngOnInit;       
     }
   }
 

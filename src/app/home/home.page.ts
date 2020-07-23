@@ -25,6 +25,7 @@ export class HomePage {
     if(todo.completed) return 'checkmark-circle';
     else return 'stopwatch';
   }
+  
   public async createTodo(){
     let key = await this.todoService.generateKey();
     let todo = {
