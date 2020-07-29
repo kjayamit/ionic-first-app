@@ -31,15 +31,9 @@
   <ion-list lines="full" style="background: var(--ion-color-primary);">
 
     <ion-item color="primary" *ngFor="let todo of todos">
-      <ion-icon [name]="getIcon(todo)" slot="start"></ion-icon>
+      <!-- <ion-icon [name]="getIcon(todo)" slot="start"></ion-icon> -->
 
-      <!-- <span float-left> <h2>{{todo.title}}</h2></span>   
-      <ion-label slot="end">{{todo.note}}</ion-label>
-    <div slot="end">
-        <span float-left class="highlightText"><ion-icon name="bookmarks-outline"></ion-icon>{{todo.tags}}</span>
-      </div> -->
-
-      <ion-grid>
+      <!-- <ion-grid>
         <ion-row>
           <ion-col>
             {{todo.title}}
@@ -48,11 +42,41 @@
             {{todo.note}}
           </ion-col>
           <ion-col>
-            <span class="highlightText"><ion-icon name="bookmarks-outline"></ion-icon>{{todo.tags}}</span>
+            <span><ion-badge color="success"><ion-icon name="bookmarks-outline"></ion-icon></ion-badge><ion-badge color="warning">{{todo.tags}}</ion-badge></span>
           </ion-col>
         </ion-row>
-      </ion-grid>
+      </ion-grid> -->
 
+      <ion-card>
+        <ion-card-header>
+          <ion-icon name="aperture-outline"></ion-icon>
+          {{todo.title}}
+        </ion-card-header>
+        <ion-card-content>
+          {{todo.note}}
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-content>
+          <ion-grid>
+            <ion-row class="ion-align-items-center ion-justify-content-between">
+              <ion-col>
+                <img class="avatar" src="../../assets/batman.png" />
+              </ion-col>
+              <ion-col size="auto">
+                <h1 class="userName">Chris Griffith</h1>
+                <p class="gameStats">
+                  <span class="wins">6W</span><span class="draws">3D</span><span class="losses">2L</span>
+                </p>
+              </ion-col>
+              <ion-col>
+                <ion-button size="small" class="ion-float-right ion-text-uppercase">Register Result</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
 
       
     </ion-item>
@@ -61,7 +85,7 @@
 
   <!-- fab placed to the bottom start -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/add-note">
-    <ion-fab-button>
+    <ion-fab-button color="tertiary">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
