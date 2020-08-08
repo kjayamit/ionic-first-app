@@ -55,7 +55,7 @@ ion-content {
   margin-right: 1rem;
 }
 
-ion-button {
+.note-class {
   --border-radius: 10px;
   --background: #6765F7;
 }
@@ -71,3 +71,10 @@ ion-button {
 //   -webkit-padding-end: 0 !important;
 //   padding-inline-end: 0 !important;
 // }
+
+ion-card{
+  display: flex;
+  flex-direction: column;
+  width: 100% !important;
+  margin: 0 !important;
+}
