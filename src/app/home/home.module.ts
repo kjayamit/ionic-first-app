@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 
+import { ViewNotePageModule } from '../modals/view-note/view-note.module';
 
 @NgModule({
   imports: [

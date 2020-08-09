@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 
+import { ModalController } from '@ionic/angular';
 import { TodoService } from '../todo.service';
 import { Todo } from '../todo';
+
+import { ViewNotePage } from '../modals/view-note/view-note.page';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +14,11 @@ import { Todo } from '../todo';
 export class HomePage {
 
   public todos: Array<Todo> = [];
-  constructor(public todoService: TodoService) {}
+  dataReturned: any;
+  
+  constructor(public todoService: TodoService,
+    public modalController: ModalController
+    ) {}
 
   async ngOnInit(){
     this.todos = await this.todoService.read();
@@ -36,5 +43,24 @@ export class HomePage {
     };
     await this.todoService.create(key,todo);
     this.todos = await this.todoService.read();
+  }
+
+  async openModal() {
+    const modal = await this.modalController.create({
+      component: ViewNotePage,
+      componentProps: {
+        "paramID": 123,
+        "paramTitle": "Test Title"
+      }
+    });
+
+    modal.onDidDismiss().then((dataReturned) => {
+      if (dataReturned !== null) {
+        this.dataReturned = dataReturned.data;
+        //alert('Modal Sent Data :'+ dataReturned);
+      }
+    });
+
+    return await modal.present();
   }
 }

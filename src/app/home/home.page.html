@@ -47,16 +47,6 @@
         </ion-row>
       </ion-grid> -->
 
-      <!-- <ion-card>
-        <ion-card-header>
-          <ion-icon name="aperture-outline"></ion-icon>
-          {{todo.title}}
-        </ion-card-header>
-        <ion-card-content>
-          {{todo.note}}
-        </ion-card-content>
-      </ion-card> -->
-
       <ion-card>
         <ion-card-header class="header">
           something
@@ -85,6 +75,9 @@
     </ion-item>
   </ion-list>
 
+  <ion-button (click)="openModal()">Open Modal</ion-button>
+
+  <p *ngIf="dataReturned">{{dataReturned}}</p>
 
   <!-- fab placed to the bottom start -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/add-note">

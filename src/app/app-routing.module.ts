@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'tags',
     loadChildren: () => import('./tags/tags.module').then( m => m.TagsPageModule)
   },
+  {
+    path: 'view-note',
+    loadChildren: () => import('./modals/view-note/view-note.module').then( m => m.ViewNotePageModule)
+  },
 ];
 
 @NgModule({
