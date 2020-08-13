@@ -24,3 +24,11 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+ 
+
+.sc-ion-modal-md-h {
+    height: 80%;
+    width: 80%;
+    top: 20%; left: 10%; right: 10%; bottom: 20%;
+}

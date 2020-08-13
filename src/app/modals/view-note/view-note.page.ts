@@ -12,9 +12,9 @@ NavParams
 
 export class ViewNotePage implements OnInit {
 
-
   modalTitle: string;
-  modelId: number;
+  modelId: string;
+  modelTags: string;
 
   constructor(
     private modalController: ModalController,
@@ -23,8 +23,9 @@ export class ViewNotePage implements OnInit {
 
   ngOnInit() {
     console.table(this.navParams);
-    this.modelId = this.navParams.data.paramID;
-    this.modalTitle = this.navParams.data.paramTitle;
+    this.modelId = this.navParams.data.noteTitle;
+    this.modalTitle = this.navParams.data.noteNote;
+    this.modelTags = this.navParams.data.noteTags;
   }
 
   async closeModal() {

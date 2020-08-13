@@ -60,6 +60,11 @@ ion-content {
   --background: #6765F7;
 }
 
+ion-button {
+  --border-radius: 10px;
+  --background: #6765F7;
+}
+
 // .card-content-md {
 //   padding-inline-start: 0;
 //   padding-inline-end: 0;
@@ -78,3 +83,4 @@ ion-card{
   width: 100% !important;
   margin: 0 !important;
 }
+

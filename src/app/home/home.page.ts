@@ -15,7 +15,7 @@ export class HomePage {
 
   public todos: Array<Todo> = [];
   dataReturned: any;
-  
+
   constructor(public todoService: TodoService,
     public modalController: ModalController
     ) {}
@@ -45,12 +45,13 @@ export class HomePage {
     this.todos = await this.todoService.read();
   }
 
-  async openModal() {
+  async openModal(todo) {
     const modal = await this.modalController.create({
       component: ViewNotePage,
       componentProps: {
-        "paramID": 123,
-        "paramTitle": "Test Title"
+        "noteTitle": todo.title,
+        "noteNote": todo.note,
+        "noteTags": todo.tags
       }
     });
 

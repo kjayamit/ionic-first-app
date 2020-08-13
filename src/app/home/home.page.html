@@ -54,17 +54,20 @@
         <ion-card-content>
           <ion-grid>
             <ion-row class="ion-align-items-center ion-justify-content-between">
-              <ion-col size="4">
+              <ion-col size="3">
                 <img class="avatar" src="../../assets/batman.png" />
               </ion-col>
-              <ion-col size="4">
+              <ion-col size="3">
                 <h1 class="userName">{{todo.title}}</h1>
                 <p class="gameStats">
                   <span class="wins">6W</span><span class="draws">3D</span><span class="losses">2L</span>
                 </p>
               </ion-col>
-              <ion-col size="4">
+              <ion-col size="3">
                 <span size="small" class="ion-float-right ion-text-uppercase note-class">{{todo.note}}</span>
+              </ion-col>             
+              <ion-col size="3">
+                <ion-button size="small" class="ion-float-right ion-text-uppercase" (click)="openModal(todo)">View</ion-button>
               </ion-col>
             </ion-row>
           </ion-grid>
