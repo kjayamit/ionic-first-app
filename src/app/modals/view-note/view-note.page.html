@@ -1,30 +1,30 @@
 <ion-header>
   <ion-toolbar color="danger">
-    <ion-title>view-note</ion-title>
+    <ion-title>Title : {{modalTitle}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
 
   <ion-grid>
-    <ion-row>
-      <ion-col text-center>
-        Title : {{modalTitle}}
+    <ion-row class="ion-align-items-center ion-justify-content-between">
+      <ion-col size="3">
+        <img class="avatar" src="../../assets/batman.png" />
       </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col text-center>
-        Note : {{modelId}}
+      <ion-col size="3">
+        <h1 class="userName">Title : {{modalTitle}}</h1>
+        <p class="gameStats">
+          <span class="wins">6W</span><span class="draws">3D</span><span class="losses">2L</span>
+        </p>
       </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col text-center>
-        Tags : {{modelTags}}
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col text-center>
-        <ion-button (click)="closeModal()">Close Modal</ion-button>
+      <ion-col size="3">
+        <span size="small" class="ion-float-right ion-text-uppercase note-class">Note : {{modelId}}</span>
+      </ion-col>          
+      <ion-col size="3">
+        <span size="small" class="ion-float-right ion-text-uppercase note-class">Tags : {{modelTags}}</span>
+      </ion-col>           
+      <ion-col size="3">
+        <ion-button size="small" class="ion-float-right ion-text-uppercase" (click)="closeModal()">Close</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -1,0 +1,46 @@
+
+.userName {
+    font-size: 16px;
+    font-weight: bold;
+    color: #5D5F65;
+  }
+  
+  .gameStats {
+    margin-top: .5em;
+    font-size: 13px;
+    font-weight: bold;
+    color: #BBBCBE;
+  }
+  
+  .wins {
+    border-bottom: 6px solid #62f254;
+    margin-right: .5em;
+  }
+  
+  .draws {
+    border-bottom: 6px solid #edce59;
+    margin-right: .5em;
+  }
+  
+  .losses {
+    border-bottom: 6px solid #d04749;
+    margin-right: .5em;
+  }
+  
+  .avatar {
+    border-radius: 10px;
+    max-width: 45px;
+    display: block;
+    float: left;
+    margin-right: 1rem;
+  }
+  
+  .note-class {
+    --border-radius: 10px;
+    --background: #6765F7;
+  }
+  
+  ion-button {
+    --border-radius: 10px;
+    --background: #6765F7;
+  }
