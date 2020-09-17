@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="danger">
-    <ion-title>Title : {{modalTitle}}</ion-title>
+    <ion-title>{{modalTitle}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,25 +8,44 @@
 
   <ion-grid>
     <ion-row class="ion-align-items-center ion-justify-content-between">
-      <ion-col size="3">
-        <img class="avatar" src="../../assets/batman.png" />
-      </ion-col>
-      <ion-col size="3">
+      <ion-col size="9">
         <h1 class="userName">Title : {{modalTitle}}</h1>
         <p class="gameStats">
           <span class="wins">6W</span><span class="draws">3D</span><span class="losses">2L</span>
         </p>
       </ion-col>
       <ion-col size="3">
+        <img class="avatar" src="../../assets/batman.png" />
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center ion-justify-content-between">
+      <ion-col size="6">
         <span size="small" class="ion-float-right ion-text-uppercase note-class">Note : {{modelId}}</span>
       </ion-col>          
-      <ion-col size="3">
-        <span size="small" class="ion-float-right ion-text-uppercase note-class">Tags : {{modelTags}}</span>
-      </ion-col>           
-      <ion-col size="3">
-        <ion-button size="small" class="ion-float-right ion-text-uppercase" (click)="closeModal()">Close</ion-button>
-      </ion-col>
+      <!-- <ion-col size="6">
+          <span *ngFor="let modelTag of modelTags">
+            <ion-icon name="bookmark-outline" size="small"></ion-icon>
+            <span class="tags wins">
+            {{modelTag}}
+            </span>   
+          </span>       
+      </ion-col>    -->
     </ion-row>
   </ion-grid>
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <!-- <ion-title>Footer</ion-title> -->
+    <span *ngFor="let modelTag of modelTags">
+      <ion-icon name="bookmark-outline" size="small"></ion-icon>
+      <span class="tags wins">
+      {{modelTag}}
+      </span>   
+    </span> 
+    <ion-buttons slot="end" class="ion-float-right ion-text-uppercase">
+      <ion-button size="small" (click)="closeModal()"><ion-icon name="close-circle-outline" size="large" style="color:red;"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

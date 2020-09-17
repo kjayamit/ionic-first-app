@@ -82,5 +82,10 @@ ion-card{
   flex-direction: column;
   width: 100% !important;
   margin: 0 !important;
+  transition: .2s;
+}
+
+ion-card:hover {
+  transform: translateY(-1rem);
 }
 

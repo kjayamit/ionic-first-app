@@ -31,23 +31,8 @@
   <ion-list lines="full" style="background: var(--ion-color-primary);">
 
     <ion-item color="primary" *ngFor="let todo of todos">
-      <!-- <ion-icon [name]="getIcon(todo)" slot="start"></ion-icon> -->
 
-      <!-- <ion-grid>
-        <ion-row>
-          <ion-col>
-            {{todo.title}}
-          </ion-col>
-          <ion-col>
-            {{todo.note}}
-          </ion-col>
-          <ion-col>
-            <span><ion-badge color="success"><ion-icon name="bookmarks-outline"></ion-icon></ion-badge><ion-badge color="warning">{{todo.tags}}</ion-badge></span>
-          </ion-col>
-        </ion-row>
-      </ion-grid> -->
-
-      <ion-card>
+      <!-- <ion-card>
         <ion-card-header class="header">
           something
           </ion-card-header>
@@ -72,7 +57,35 @@
             </ion-row>
           </ion-grid>
         </ion-card-content>
+      </ion-card> -->
+
+      <ion-card (click)="openModal(todo)">
+        <ion-card-header class="header">        
+          <ion-item>
+            <ion-label slot="start">{{todo.title}}</ion-label>
+            <ion-icon name="calendar-outline" slot="end"></ion-icon>
+          </ion-item>      
+          <!-- <ion-item slot="end">
+            <ion-label>{{todo.title}}</ion-label>
+          </ion-item> -->
+        </ion-card-header>
+        <ion-card-content>
+          <ion-grid>
+            <ion-row class="ion-align-items-center ion-justify-content-between">
+              <ion-col size="3">
+                <img class="avatar" src="../../assets/batman.png" />
+              </ion-col>            
+              <ion-col size="6">
+                <span size="small" class="ion-float-left ion-text-uppercase note-class">{{todo.note}}</span>
+              </ion-col>             
+              <ion-col size="3">
+                <ion-button size="small" class="ion-float-right ion-text-uppercase" (click)="openModal(todo)">View</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
       </ion-card>
+      
 
       
     </ion-item>
